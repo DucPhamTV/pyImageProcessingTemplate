@@ -12,19 +12,19 @@ log.setLevel(logging.DEBUG)
 
 if __name__ == "__main__":
     cap = cv2.VideoCapture(0)
-    number_frames = 500
     n = 0
     start = time.time()
     while (True):
         ret, frame = cap.read()
         assert ret
         n += 1
-        if n == number_frames:
+        cv2.imshow('aaa', frame)
+        if cv2.waitKey(1) & 0xFF == ord('q'):
             break
     stop = time.time()
     delta = stop - start
     cap.release()
-    log.info("elapsed time: %d, FPS %d" % (delta, 500 / delta))
+    log.info("elapsed time: %d, FPS %d" % (delta, n / delta))
+    cv2.destroyAllWindows()
 
 
-cv2.destroyAllWindows()
