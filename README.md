@@ -4,6 +4,7 @@ Simple project using OpenCV + python, How to optimize output streaming and perfo
 ### set up environment
 
 make venv
+
 source venv/bin/activate
 
 ### Run single thread code. the frames aren't really smooth. Notice the FPS at the end.
